@@ -18,10 +18,9 @@ Repositorio original: [jjsantos01/qgis_mcp](https://github.com/jjsantos01/qgis_m
 
 ## 1. Archivos del servidor
 
-Crea una carpeta en tu equipo para el proyecto, por ejemplo `qgis_mcp`, y coloca en ella estos 3 archivos:
+Crea una carpeta en tu equipo para el proyecto, por ejemplo `qgis_mcp`, y coloca en ella estos 2 archivos:
 
 - `qgis_mcp_server.py`
-- `qgis_socket_client.py`
 - `pyproject.toml` con este contenido:
 
 ```toml
