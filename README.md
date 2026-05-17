@@ -1,8 +1,8 @@
+# QGIS MCP
 
 Conecta Claude AI a QGIS a través del Model Context Protocol (MCP), permitiendo a Claude interactuar y controlar QGIS directamente.
 
 ## Acknowledgements
-
 Este proyecto está basado en el trabajo de **Juan José Santos** ([@jjsantos01](https://github.com/jjsantos01)).  
 Repositorio original: [jjsantos01/qgis_mcp](https://github.com/jjsantos01/qgis_mcp).  
 
@@ -18,7 +18,16 @@ Repositorio original: [jjsantos01/qgis_mcp](https://github.com/jjsantos01/qgis_m
 
 ## 1. Archivos del servidor
 
-Crea una carpeta en tu equipo para el proyecto, por ejemplo `qgis_mcp`, y coloca en ella estos 2 archivos:
+Clona este repositorio para obtener los archivos necesarios:
+
+```bash
+git clone https://github.com/TU_USUARIO/qgis_mcp.git
+cd qgis_mcp
+```
+
+> **¿No tienes Git?** Descarga el repositorio como ZIP desde GitHub (`Code` → `Download ZIP`), descomprímelo y renombra la carpeta a `qgis_mcp`.
+
+La carpeta debe contener estos 2 archivos:
 
 - `qgis_mcp_server.py`
 - `pyproject.toml` con este contenido:
