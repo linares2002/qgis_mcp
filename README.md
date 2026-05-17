@@ -12,7 +12,7 @@ Repositorio original: [jjsantos01/qgis_mcp](https://github.com/jjsantos01/qgis_m
 
 - [QGIS 3.X](https://qgis.org/) instalado
 - [Claude Desktop](https://claude.ai/download) instalado
-- [uv](https://docs.astral.sh/uv/getting-started/installation/) instalado, quiero qu e se abra en nueva pestaña
+- [uv](https://docs.astral.sh/uv/getting-started/installation/) instalado
 
 ---
 
