@@ -1,6 +1,11 @@
 
 QGIS MCP conecta Claude AI a QGIS a través del Model Context Protocol (MCP), permitiendo a Claude interactuar y controlar QGIS directamente.
 
+## Acknowledgements
+
+Este proyecto está basado en el trabajo de **Juan José Santos** ([@jjsantos01](https://github.com/jjsantos01)).  
+Repositorio original: [jjsantos01/qgis_mcp](https://github.com/jjsantos01/qgis_mcp).  
+
 ---
 
 ## Requisitos previos
@@ -112,10 +117,3 @@ Una vez conectado, Claude tendrá acceso a las siguientes herramientas:
 | `save_project` | Guarda el proyecto actual |
 | `render_map` | Renderiza el mapa a un archivo de imagen |
 | `execute_code` | Ejecuta código PyQGIS arbitrario |
-
----
-
-## Acknowledgements
-
-Este proyecto está basado en el trabajo de **Juan José Santos** ([@jjsantos01](https://github.com/jjsantos01)).  
-Repositorio original: [jjsantos01/qgis_mcp](https://github.com/jjsantos01/qgis_mcp).  
