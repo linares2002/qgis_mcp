@@ -119,4 +119,3 @@ Una vez conectado, Claude tendrá acceso a las siguientes herramientas:
 
 Este proyecto está basado en el trabajo de **Juan José Santos** ([@jjsantos01](https://github.com/jjsantos01)).  
 Repositorio original: [jjsantos01/qgis_mcp](https://github.com/jjsantos01/qgis_mcp).  
-El repositorio no incluye licencia declarada — consulta directamente al autor para usos derivados.
