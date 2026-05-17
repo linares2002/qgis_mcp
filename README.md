@@ -5,9 +5,9 @@ QGIS MCP conecta Claude AI a QGIS a través del Model Context Protocol (MCP), pe
 
 ## Requisitos previos
 
-- [QGIS 3.X](https://qgis.org/) instalado
-- [Claude Desktop](https://claude.ai/download) instalado
-- [uv](https://docs.astral.sh/uv/getting-started/installation/) instalado
+- <a href="https://qgis.org/" target="_blank">QGIS 3.X</a> instalado
+- <a href="https://claude.ai/download" target="_blank">Claude Desktop</a> instalado
+- <a href="https://docs.astral.sh/uv/getting-started/installation/" target="_blank">uv</a> instalado
 
 ---
 
