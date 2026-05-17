@@ -1,5 +1,5 @@
 
-QGIS MCP conecta Claude AI a QGIS a través del Model Context Protocol (MCP), permitiendo a Claude interactuar y controlar QGIS directamente.
+Conecta Claude AI a QGIS a través del Model Context Protocol (MCP), permitiendo a Claude interactuar y controlar QGIS directamente.
 
 ## Acknowledgements
 
