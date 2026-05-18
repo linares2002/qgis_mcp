@@ -126,15 +126,16 @@ Una vez conectado, Claude tendrá acceso a las siguientes herramientas:
 | `render_map` | Renderiza el mapa a un archivo de imagen |
 | `execute_code` | Ejecuta código PyQGIS arbitrario |
 
-## Resultados
+---
+
+## 5. Resultados
 
 ### Video de demostración
 
 [![Demo QGIS MCP](https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
 
----
 
-## 5. Ejemplo de uso
+### Ejemplo de uso
 
 - 📝 [Ver prompt utilizado](docs/prompt.md)
 - 💬 [Ver conversación completa con Claude](docs/conversacion.md)
