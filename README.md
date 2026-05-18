@@ -130,13 +130,6 @@ Una vez conectado, Claude tendrá acceso a las siguientes herramientas:
 
 ## 5. Resultados
 
-### Video de demostración
-
-[![Demo QGIS MCP](https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
-
-
-### Ejemplo de uso
-
 - 📝 [Ver prompt utilizado](docs/prompt.md)
 - 💬 [Ver conversación completa con Claude](docs/conversacion.md)
 - 🗺️ [Ver resultado en QGIS](assets/resultado.png)
