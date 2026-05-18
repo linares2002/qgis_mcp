@@ -1,5 +1,9 @@
 # Informe de Ejecución QGIS MCP
 
+He leído el prompt. Voy a ejecutar cada paso en orden.
+
+---
+
 ## PASO 1: Verificación de Conectividad
 
 ✅ **PASO 1 completado** — El servidor MCP de QGIS responde correctamente (`pong: true`). Conexión exitosa.
@@ -28,7 +32,7 @@ C:\Users\mange\Documents\Cursos\INTRODUCCIÓN A LOS SISTEMAS DE INFORMACIÓN GEO
 
 ## PASO 4: Importar Tabla CSV
 
-> El delimitador `;` no se procesaba correctamente en la URI inicial (todos los datos iban en un solo campo). Se corrigió el encoding del delimitador en la URI.
+> El delimitador `;` no se procesaba correctamente en la URI inicial — todos los datos iban en un solo campo. Se corrigió el encoding del delimitador y se reintentó.
 
 ✅ **PASO 4 completado** — Tabla CSV importada correctamente:
 
@@ -40,12 +44,12 @@ C:\Users\mange\Documents\Cursos\INTRODUCCIÓN A LOS SISTEMAS DE INFORMACIÓN GEO
 
 ## PASO 5: Unión de Tablas (JOIN)
 
-> Los campos `ID` (Embalses) y `COD_DEMAR` (DemarcacionesHidrograficas) comparten los mismos valores pero con tipos distintos (integer vs. string). El join dinámico OGR no propagaba los campos. Se optó por añadir los campos directamente al shapefile y rellenarlos mediante iteración.
+> Los campos `ID` y `COD_DEMAR` comparten los mismos valores (ej. 101 = Cataluña Interna), pero con tipos distintos. El join dinámico OGR devolvió `True` pero no propagó los campos, comportamiento conocido del provider OGR con joins en memoria. Se optó por añadir los campos directamente al shapefile y rellenarlos mediante iteración.
 
 ✅ **PASO 5 completado** — Unión de tablas realizada:
 
 - **15 registros** de DemarcacionesHidrograficas actualizados con datos de Embalses
-- **10 demarcaciones** sin correspondencia en el CSV (códigos 121–127, 150, 111, 160 — demarcaciones sin datos de embalses)
+- **10 demarcaciones** sin correspondencia en el CSV (códigos 121–127, 150, 111, 160 — probablemente demarcaciones sin datos de embalses)
 - **Campos añadidos al shapefile:** `Cuenca`, `Capacidad`, `Embalsada`, `Per_embal`, `Variacion`, `Per_var`
 
 ---
@@ -67,9 +71,7 @@ C:\Users\mange\Documents\Cursos\INTRODUCCIÓN A LOS SISTEMAS DE INFORMACIÓN GEO
 ### Etiquetas
 
 - **Expresión:** nombre de la cuenca + porcentaje con 1 decimal + `%`
-- **Fuente:** Arial 7pt
-- **Buffer:** halo blanco para legibilidad
-- **Colocación:** centrado horizontal sobre el polígono
+- **Fuente:** Arial 7pt con halo blanco para legibilidad
 
 ---
 
@@ -84,7 +86,8 @@ C:\Users\mange\Documents\Cursos\INTRODUCCIÓN A LOS SISTEMAS DE INFORMACIÓN GEO
 | 5. Join tablas | ✅ | 15/25 demarcaciones unidas (10 sin datos de embalse) |
 | 6. Simbología + etiquetas | ✅ | Coropletas 5 clases + etiquetas con % |
 
-**Proyecto guardado en:**
+**Proyecto guardado con todos los cambios en:**
+
 ```
 C:\Users\mange\Documents\Cursos\INTRODUCCIÓN A LOS SISTEMAS DE INFORMACIÓN GEOGRÁFICA\proyecto\proyecto.qgz
 ```
