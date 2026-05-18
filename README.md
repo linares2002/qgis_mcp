@@ -1,6 +1,6 @@
 # QGIS MCP
 
-Conecta Claude AI y **Pi Coding Agent** a QGIS a través del Model Context Protocol (MCP), permitiendo a los agentes interactuar y controlar QGIS directamente. La integración con Pi Coding Agent amplía las capacidades del asistente con herramientas de agente de código, permitiendo automatizar flujos de trabajo geoespaciales de forma más potente.
+Conecta **Claude Desktop** y **Pi Coding Agent** a QGIS a través del Model Context Protocol (MCP), permitiendo a los agentes interactuar y controlar QGIS directamente. La integración con Pi Coding Agent amplía las capacidades del asistente con herramientas de agente de código, permitiendo automatizar flujos de trabajo geoespaciales de forma más potente.
 
 ## Acknowledgements
 Este proyecto está basado en el trabajo de **Juan José Santos** ([@jjsantos01](https://github.com/jjsantos01)).  
