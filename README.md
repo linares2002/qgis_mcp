@@ -69,7 +69,7 @@ npm install -g @earendil-works/pi-coding-agent
 
 ---
 
-## 4. Configurar el archivo `mcp.json`
+## 4. Configurar Pi coding para utilizar MCP
 
 El archivo `mcp.json` se encuentra en:
 
@@ -77,31 +77,31 @@ El archivo `mcp.json` se encuentra en:
 C:\Users\<TU_USUARIO>\.pi\agent\mcp.json
 ```
 
-> **Nota:** Si la carpeta `.pi\agent` no existe, créala manualmente.
-
 ```json
-"mcpServers": {
-  "qgis": {
-    "command": "C:\\Users\\mange\\AppData\\Local\\Microsoft\\WinGet\\Links\\uv.exe",
-    "args": [
-      "--directory",
-      "C:\\Users\\mange\\desktop\\qgis_mcp",
-      "run",
-      "qgis_mcp_server.py"
-    ],
-    "directTools": true
-  },
-  "pi-coding-agent": {
-    "command": "npx",
-    "args": [
-      "@earendil-works/pi-coding-agent"
-    ],
-    "directTools": true
+{
+  "mcpServers": {
+    "qgis": {
+      "command": "C:\\Users\\TU_USUARIO\\AppData\\Local\\Microsoft\\WinGet\\Links\\uv.exe",
+      "args": [
+        "--directory",
+        "C:\\Users\\TU_USUARIO\\desktop\\qgis_mcp",
+        "run",
+        "qgis_mcp_server.py"
+      ],
+      "directTools": true
+    }
   }
 }
+
 ```
 
-> **Importante:** Ajusta las rutas (`C:\\Users\\mange\\...`) a las de tu propio usuario y entorno.
+> **Importante:** Ajusta las rutas (`C:\\Users\\TU_USUARIO\\...`) a las de tu propio usuario y entorno.
+
+Instala módulo MCP:
+
+```bash
+npm install -g pi-mcp-adapter
+```
 
 ---
 
@@ -117,10 +117,10 @@ Añade lo siguiente, ajustando la ruta a tu carpeta del proyecto:
 {
     "mcpServers": {
         "qgis": {
-            "command": "C:\\Users\\mange\\AppData\\Local\\Microsoft\\WinGet\\Links\\uv.exe",
+            "command": "C:\\Users\\TU_USUARIO\\AppData\\Local\\Microsoft\\WinGet\\Links\\uv.exe",
             "args": [
                 "--directory",
-                "C:\\Users\\mange\\desktop\\qgis_mcp",
+                "C:\\Users\\TU_USUARIO\\desktop\\qgis_mcp",
                 "run",
                 "qgis_mcp_server.py"
             ]
@@ -139,6 +139,7 @@ Cada vez que quieras usarlo:
 
 1. Abre QGIS → `Plugins` → `QGIS MCP` → **Start Server**
 2. Abre Claude Desktop — el servidor MCP arranca automáticamente en segundo plano gracias a la configuración del paso 5. Verás el ícono 🔨 con las herramientas de QGIS disponibles.
+3. Abre pi coding agent.
 
 ### Probar el servidor manualmente
 
