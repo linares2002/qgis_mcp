@@ -1,6 +1,6 @@
 # QGIS MCP
 
-Conecta Claude AI a QGIS a través del Model Context Protocol (MCP), permitiendo a Claude interactuar y controlar QGIS directamente.
+Conecta Claude AI y **Pi Coding Agent** a QGIS a través del Model Context Protocol (MCP), permitiendo a los agentes interactuar y controlar QGIS directamente. La integración con Pi Coding Agent amplía las capacidades del asistente con herramientas de agente de código, permitiendo automatizar flujos de trabajo geoespaciales de forma más potente.
 
 ## Acknowledgements
 Este proyecto está basado en el trabajo de **Juan José Santos** ([@jjsantos01](https://github.com/jjsantos01)).  
@@ -10,9 +10,10 @@ Repositorio original: [jjsantos01/qgis_mcp](https://github.com/jjsantos01/qgis_m
 
 ## Requisitos previos
 
-- [QGIS 3.X](https://qgis.org/) instalado
+- [QGIS 3.44 LTR](https://qgis.org/) instalado (Long Term Release)
 - [Claude Desktop](https://claude.ai/download) instalado
 - [uv](https://docs.astral.sh/uv/getting-started/installation/) instalado
+- [Node.js + npm](https://nodejs.org/) instalado (necesario para Pi Coding Agent)
 
 ---
 
@@ -42,7 +43,7 @@ dependencies = [
     "mcp[cli]>=1.3.0",
 ]
 ```
- 
+
 ---
 
 ## 2. Instalar dependencias
@@ -57,7 +58,54 @@ Esto creará el entorno virtual `.venv` e instalará todas las dependencias auto
 
 ---
 
-## 3. Configurar Claude Desktop
+## 3. Instalar Pi Coding Agent
+
+Abre una terminal (CMD o PowerShell) y ejecuta:
+
+```bash
+npm install -g @earendil-works/pi-coding-agent
+```
+
+
+---
+
+## 4. Configurar el archivo `mcp.json`
+
+El archivo `mcp.json` se encuentra en:
+
+```
+C:\Users\<TU_USUARIO>\.pi\agent\mcp.json
+```
+
+> **Nota:** Si la carpeta `.pi\agent` no existe, créala manualmente.
+
+```json
+"mcpServers": {
+  "qgis": {
+    "command": "C:\\Users\\mange\\AppData\\Local\\Microsoft\\WinGet\\Links\\uv.exe",
+    "args": [
+      "--directory",
+      "C:\\Users\\mange\\desktop\\qgis_mcp",
+      "run",
+      "qgis_mcp_server.py"
+    ],
+    "directTools": true
+  },
+  "pi-coding-agent": {
+    "command": "npx",
+    "args": [
+      "@earendil-works/pi-coding-agent"
+    ],
+    "directTools": true
+  }
+}
+```
+
+> **Importante:** Ajusta las rutas (`C:\\Users\\mange\\...`) a las de tu propio usuario y entorno.
+
+---
+
+## 5. Configurar Claude Desktop
 
 Edita el archivo de configuración de Claude Desktop:
 
@@ -69,10 +117,10 @@ Añade lo siguiente, ajustando la ruta a tu carpeta del proyecto:
 {
     "mcpServers": {
         "qgis": {
-            "command": "uv",
+            "command": "C:\\Users\\mange\\AppData\\Local\\Microsoft\\WinGet\\Links\\uv.exe",
             "args": [
                 "--directory",
-                "/RUTA/ABSOLUTA/A/qgis_mcp",
+                "C:\\Users\\mange\\desktop\\qgis_mcp",
                 "run",
                 "qgis_mcp_server.py"
             ]
@@ -85,12 +133,12 @@ Cierra y vuelve a abrir Claude Desktop para que tome los cambios.
 
 ---
 
-## 4. Uso
+## 6. Uso
 
 Cada vez que quieras usarlo:
 
 1. Abre QGIS → `Plugins` → `QGIS MCP` → **Start Server**
-2. Abre Claude Desktop — el servidor MCP arranca automáticamente en segundo plano gracias a la configuración del paso 3. Verás el ícono 🔨 con las herramientas de QGIS disponibles.
+2. Abre Claude Desktop — el servidor MCP arranca automáticamente en segundo plano gracias a la configuración del paso 5. Verás el ícono 🔨 con las herramientas de QGIS disponibles.
 
 ### Probar el servidor manualmente
 
@@ -128,7 +176,7 @@ Una vez conectado, Claude tendrá acceso a las siguientes herramientas:
 
 ---
 
-## 5. Resultados
+## 7. Resultados
 
 - 📝 [Ver prompt utilizado](docs/prompt.md)
 - 💬 [Ver conversación completa con Claude](docs/conversacion.md)
